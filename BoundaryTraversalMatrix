@@ -1,0 +1,24 @@
+static void boundaryTraversal(int r, int c, int a[][])
+    {
+        int j=0;//at least 1 row present always top row printed
+        for(int i=0; i<c; i++)  //left to right
+        System.out.print(a[j][i]+" ");
+        if(r>1)  //more than 1 row
+        {
+          j=c-1;
+          for(int i=1; i<r; i++)  //top to bottom 
+          System.out.print(a[i][j]+" ");
+          if(c>1)  //more than 1 column
+          {
+            j=r-1;
+            for(int i=c-2; i>=0; i--)  // right to left
+            System.out.print(a[j][i]+" ");
+            if(r>2)  //more than 2 rows and more than 1 col
+            {
+              j=0;
+              for(int i=r-2; i>=1; i--)  //bottom to top
+              System.out.print(a[i][j]+" ");
+            }
+         }
+       }
+    }
